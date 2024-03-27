@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: CC-BY-NC-ND-4.0
-pragma solidity 0.8.7;
+pragma solidity 0.8.9;
 
 /// @title The contract factory for the keeper and pool contracts. Utilizes minimal clones to keep gas costs low
 interface IInvariantCheck {

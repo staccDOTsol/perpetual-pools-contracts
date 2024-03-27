@@ -1,12 +1,6 @@
-import { config as dotEnvConfig } from "dotenv"
-dotEnvConfig()
-
-import { HardhatUserConfig } from "hardhat/types"
-
 import "@nomiclabs/hardhat-etherscan"
 import "@nomiclabs/hardhat-waffle"
 import "@typechain/hardhat"
-import "@nomiclabs/hardhat-etherscan"
 import "@openzeppelin/hardhat-upgrades"
 import "hardhat-log-remover"
 import "hardhat-gas-reporter"
@@ -15,15 +9,20 @@ import "hardhat-deploy-ethers"
 import "hardhat-contract-sizer"
 import "solidity-coverage"
 
+import { config as dotEnvConfig } from "dotenv"
+import { HardhatUserConfig } from "hardhat/types"
+
+dotEnvConfig()
+
 const ALCHEMY_API_TESTNET_URL = process.env.ALCHEMY_API_TESTNET_URL || ""
 const ALCHEMY_API_MAINNET_URL = process.env.ALCHEMY_API_MAINNET_URL || ""
 const ALCHEMY_API_ARBITRUM_URL = process.env.ALCHEMY_API_ARBITRUM_URL || ""
 const ARBITRUM_PRIVATE_KEY =
     process.env.ARBITRUM_PRIVATE_KEY ||
-    "0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3" // well known private key
+    "" // well known private key
 const TESTNET_PRIVATE_KEY =
     process.env.TESTNET_PRIVATE_KEY ||
-    "0xc87509a1c067bbde78beb793e6fa76530b6382a4c0241e5e4a9ec0a0f44dc0d3" // well known private key
+    "" // well known private key
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 
 const config: HardhatUserConfig = {
@@ -31,7 +30,7 @@ const config: HardhatUserConfig = {
     solidity: {
         compilers: [
             {
-                version: "0.8.7",
+                version: "0.8.9",
                 settings: {
                     optimizer: {
                         enabled: true,

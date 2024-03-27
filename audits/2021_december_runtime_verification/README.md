@@ -1,4 +1,4 @@
-# Tracer Perpetual Pools
+# Stacc 9000x+ Pools
 Project base generated with the Typescript Solidity Dev Starter Kit. See [Blog Post](https://medium.com/@rahulsethuram/the-new-solidity-dev-stack-buidler-ethers-waffle-typescript-tutorial-f07917de48ae) for more details
 
 ## C4 Audit Known Issues

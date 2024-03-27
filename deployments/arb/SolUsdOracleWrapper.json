@@ -1,0 +1,557 @@
+{
+  "address": "0x53d502dB61df3f41de19Ca209153D77D1A00C6A0",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "_switchboard",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "_feedId",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "_feedName",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_name",
+          "type": "string"
+        },
+        {
+          "internalType": "string",
+          "name": "_description",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "feedName",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint80",
+          "name": "roundId",
+          "type": "uint80"
+        }
+      ],
+      "name": "RoundEmpty",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "aggregrator",
+      "outputs": [
+        {
+          "internalType": "contract Aggregator",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "decimals",
+      "outputs": [
+        {
+          "internalType": "uint8",
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "deployer",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "description",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "feedId",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "feedName",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "wad",
+          "type": "int256"
+        }
+      ],
+      "name": "fromWad",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPrice",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getPriceAndMetadata",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "_price",
+          "type": "int256"
+        },
+        {
+          "internalType": "bytes",
+          "name": "_data",
+          "type": "bytes"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint80",
+          "name": "_roundId",
+          "type": "uint80"
+        }
+      ],
+      "name": "getRoundData",
+      "outputs": [
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        },
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "latestRoundData",
+      "outputs": [
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        },
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "name",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "oracle",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "poll",
+      "outputs": [
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "source",
+          "type": "string"
+        }
+      ],
+      "name": "stringToBytes32",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "result",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "switchboardPricesContract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "version",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "pure",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "viewLatestRoundData",
+      "outputs": [
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        },
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint80",
+          "name": "_roundId",
+          "type": "uint80"
+        }
+      ],
+      "name": "viewRoundData",
+      "outputs": [
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        },
+        {
+          "internalType": "int256",
+          "name": "",
+          "type": "int256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint80",
+          "name": "",
+          "type": "uint80"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x8521dae2ce52ed2b2588827b8d769bb711d88c02f29481ee50469391ae87409b",
+  "receipt": {
+    "to": null,
+    "from": "0xd9c281C5501c3Fe2C95587A99C9d0a54dDa63712",
+    "contractAddress": "0x53d502dB61df3f41de19Ca209153D77D1A00C6A0",
+    "transactionIndex": 1,
+    "gasUsed": "2640352",
+    "logsBloom": "0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+    "blockHash": "0xeef90ead2026de7330fec5da3c6930a1797ef60e732e1438668e73545bf21a92",
+    "transactionHash": "0x8521dae2ce52ed2b2588827b8d769bb711d88c02f29481ee50469391ae87409b",
+    "logs": [],
+    "blockNumber": 194564805,
+    "cumulativeGasUsed": "2640352",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0xeb28036e166D67e85CCB28E59407Ab09Eb494EC2",
+    "0xeb28036e166D67e85CCB28E59407Ab09Eb494EC2",
+    "SOL/USD",
+    "SOL/USD",
+    "SOL/USD"
+  ],
+  "solcInputHash": "acc8e83a5e7758874f88425eb4f5e106",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.9+commit.e5eed63a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_switchboard\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_feedId\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"_feedName\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_name\",\"type\":\"string\"},{\"internalType\":\"string\",\"name\":\"_description\",\"type\":\"string\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"feedName\",\"type\":\"bytes32\"},{\"internalType\":\"uint80\",\"name\":\"roundId\",\"type\":\"uint80\"}],\"name\":\"RoundEmpty\",\"type\":\"error\"},{\"inputs\":[],\"name\":\"aggregrator\",\"outputs\":[{\"internalType\":\"contract Aggregator\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"decimals\",\"outputs\":[{\"internalType\":\"uint8\",\"name\":\"\",\"type\":\"uint8\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"deployer\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"description\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feedId\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"feedName\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"int256\",\"name\":\"wad\",\"type\":\"int256\"}],\"name\":\"fromWad\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPrice\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getPriceAndMetadata\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"_price\",\"type\":\"int256\"},{\"internalType\":\"bytes\",\"name\":\"_data\",\"type\":\"bytes\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint80\",\"name\":\"_roundId\",\"type\":\"uint80\"}],\"name\":\"getRoundData\",\"outputs\":[{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"},{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"latestRoundData\",\"outputs\":[{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"},{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"name\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"oracle\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"poll\",\"outputs\":[{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"string\",\"name\":\"source\",\"type\":\"string\"}],\"name\":\"stringToBytes32\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"result\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"switchboardPricesContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"version\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"viewLatestRoundData\",\"outputs\":[{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"},{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint80\",\"name\":\"_roundId\",\"type\":\"uint80\"}],\"name\":\"viewRoundData\",\"outputs\":[{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"},{\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint80\",\"name\":\"\",\"type\":\"uint80\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{\"fromWad(int256)\":{\"returns\":{\"_0\":\"Converted non-WAD value\"}},\"getPrice()\":{\"returns\":{\"_0\":\"The latest price\"}},\"getPriceAndMetadata()\":{\"returns\":{\"_data\":\"The metadata. Implementations can choose what data to return here\",\"_price\":\"The latest round data price\"}},\"poll()\":{\"details\":\"Spot oracles must implement but it will be a no-op\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"fromWad(int256)\":{\"notice\":\"Converts from a WAD to normal value\"},\"getPrice()\":{\"notice\":\"Returns the current price for the asset in question\"},\"poll()\":{\"notice\":\"Updates the underlying oracle state and returns the new price\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/implementation/ChainlinkOracleWrapper.sol\":\"ChainlinkOracleWrapper\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"@switchboard-xyz/evm.js/contracts/Aggregator.sol\":{\"content\":\"//SPDX-License-Identifier: UNLICENSED\\npragma solidity ^0.8.9;\\n\\nimport {ISwitchboardPush} from \\\"./ISwitchboardPush.sol\\\";\\n\\n// CLASSIC PUSH ADAPTER INTERFACE\\ninterface AggregatorV3Interface {\\n    function decimals() external view returns (uint8);\\n\\n    function description() external view returns (string memory);\\n\\n    function version() external view returns (uint256);\\n\\n    function getRoundData(\\n        uint80 _roundId\\n    )\\n        external\\n        view\\n        returns (\\n            uint80 roundId,\\n            int256 answer,\\n            uint256 startedAt,\\n            uint256 updatedAt,\\n            uint80 answeredInRound\\n        );\\n\\n    function latestRoundData()\\n        external\\n        view\\n        returns (\\n            uint80 roundId,\\n            int256 answer,\\n            uint256 startedAt,\\n            uint256 updatedAt,\\n            uint80 answeredInRound\\n        );\\n}\\n\\ncontract Aggregator is AggregatorV3Interface {\\n    // errors\\n    error RoundEmpty(bytes32 feedName, uint80 roundId);\\n\\n    address public switchboardPricesContract;\\n    address public feedId;\\n    bytes32 public feedName;\\n    string public name;\\n    string public description;\\n\\n    constructor(\\n        address _switchboard, // Switchboard contract address\\n        address _feedId,\\n        bytes32 _feedName, // Function id corresponding to the feed\\n        string memory _name, // Name of the feed\\n        string memory _description\\n    ) {\\n        switchboardPricesContract = _switchboard;\\n        feedId = _feedId;\\n        feedName = _feedName;\\n        name = _name;\\n        description = _description;\\n    }\\n\\n    function decimals() external pure override returns (uint8) {\\n        return 18;\\n    }\\n\\n    function version() external pure override returns (uint256) {\\n        return 1;\\n    }\\n\\n    function getRoundData(\\n        uint80 _roundId\\n    )\\n        external\\n        view\\n        override\\n        returns (\\n            uint80 roundId,\\n            int256 answer,\\n            uint256 startedAt,\\n            uint256 updatedAt,\\n            uint80 answeredInRound\\n        )\\n    {\\n        // Get round data / Check if the round exists\\n        (\\n            roundId,\\n            answer,\\n            startedAt,\\n            updatedAt,\\n            answeredInRound\\n        ) = viewRoundData(_roundId);\\n        if (updatedAt == 0) {\\n            revert RoundEmpty(feedName, roundId);\\n        }\\n    }\\n\\n    function latestRoundData()\\n        external\\n        view\\n        override\\n        returns (\\n            uint80 roundId,\\n            int256 answer,\\n            uint256 startedAt,\\n            uint256 updatedAt,\\n            uint80 answeredInRound\\n        )\\n    {\\n        roundId = ISwitchboardPush(switchboardPricesContract)\\n            .feeds(feedName)\\n            .latestIntervalId;\\n        if (roundId == 0) {\\n            revert RoundEmpty(feedName, 0);\\n        }\\n        return viewLatestRoundData();\\n    }\\n\\n    // View Functions (for off-chain use / no protection from empty rounds)\\n    function viewRoundData(\\n        uint80 _roundId\\n    )\\n        public\\n        view\\n        returns (\\n            uint80 roundId,\\n            int256 answer,\\n            uint256 startedAt,\\n            uint256 updatedAt,\\n            uint80 answeredInRound\\n        )\\n    {\\n        ISwitchboardPush.Feed memory feed = ISwitchboardPush(\\n            switchboardPricesContract\\n        ).feeds(feedName);\\n        ISwitchboardPush.Result memory result;\\n\\n        if (_roundId == feed.latestIntervalId) {\\n            result = feed.latestResult;\\n        } else {\\n            result = ISwitchboardPush(switchboardPricesContract).results(\\n                feedName,\\n                _roundId\\n            );\\n        }\\n\\n        answer = result.value;\\n        startedAt = result.startedAt;\\n        updatedAt = result.updatedAt;\\n        roundId = _roundId;\\n        answeredInRound = _roundId;\\n    }\\n\\n    function viewLatestRoundData()\\n        public\\n        view\\n        returns (\\n            uint80 roundId,\\n            int256 answer,\\n            uint256 startedAt,\\n            uint256 updatedAt,\\n            uint80 answeredInRound\\n        )\\n    {\\n        ISwitchboardPush.Result memory result = ISwitchboardPush(\\n            switchboardPricesContract\\n        ).feeds(feedName).latestResult;\\n        answer = result.value;\\n        startedAt = result.startedAt;\\n        updatedAt = result.updatedAt;\\n        roundId = roundId;\\n        answeredInRound = roundId;\\n    }\\n}\\n\",\"keccak256\":\"0x2edeb76aa0cae1839fa6aa0bb3e8e1b460293dd0007204140a15fd12502d7dc2\",\"license\":\"UNLICENSED\"},\"@switchboard-xyz/evm.js/contracts/ISwitchboardPush.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity ^0.8.9;\\n\\n// Source can be found at https://github.com/switchboard-xyz/evm-functions-template/tree/main/rust/01_price_oracle/SwitchboardPushReceiver/contracts/src/SwitchboardPushReceiver\\ninterface ISwitchboardPush {\\n    //=========================================================================\\n    // Events\\n    //=========================================================================\\n\\n    // emitted when a new result lands for a feed\\n    event NewResult(\\n        bytes32 indexed feedId,\\n        uint80 indexed roundId,\\n        int256 value,\\n        uint256 timestamp\\n    );\\n\\n    // emitted when a new adapter is deployed\\n    event NewAdapter(\\n        bytes32 indexed feedId,\\n        address indexed adapter,\\n        address indexed sender\\n    );\\n\\n    // emitted when latestResult is called\\n    event ReadEvent(\\n        address indexed feedId,\\n        address indexed sender,\\n        int256 value,\\n        uint256 timestamp\\n    );\\n\\n    //=========================================================================\\n    // Structs\\n    //=========================================================================\\n\\n    struct Result {\\n        int256 value;\\n        uint256 startedAt;\\n        uint256 updatedAt;\\n    }\\n\\n    struct Feed {\\n        address feedId;\\n        bytes32 feedName;\\n        uint80 latestIntervalId;\\n        Result latestResult; // used by default for getLatestResult\\n        bool historyEnabled; // by default off so we don't store all feed histories for all 500+ feeds forever\\n        bool latestResultFailed;\\n    }\\n\\n    //=========================================================================\\n    // Functions\\n    //=========================================================================\\n\\n    /**\\n     * deployFeedAdapter\\n     * Compatible with AggregatorV3 Interface\\n     * @param feedId feed id to deploy an adapter for\\n     * @param name name embedded in the AggregatorV3 adapter\\n     * @param description description embedded in the adapter\\n     * emits NewAdapter which can be used to get the adapter address\\n     *\\n     * Adapter source can be found at https://github.com/switchboard-xyz/evm-functions-template/blob/main/rust/01_price_oracle/SwitchboardPushReceiver/contracts/src/SwitchboardPushReceiver/Receiver/Aggregator.sol\\n     */\\n    function deployFeedAdapter(\\n        address feedId,\\n        string memory name,\\n        string memory description\\n    ) external;\\n\\n    /**\\n     * getLatestResult\\n     * @param feedId feed id to get the latest result for\\n     * @return value latest value\\n     * @return timestamp timestamp of the latest value\\n     * @return updatedAt block.timestamp of the last update\\n     */\\n    function getLatestResult(\\n        address feedId\\n    )\\n        external\\n        returns (\\n            int256 value,\\n            uint256 timestamp,\\n            uint256 updatedAt,\\n            uint80 intervalId\\n        );\\n\\n    //=========================================================================\\n    // Extra View Functions\\n    //=========================================================================\\n\\n    function results(\\n        bytes32 feedName,\\n        uint80 intervalId\\n    ) external view returns (Result memory);\\n\\n    function feeds(bytes32 feedName) external view returns (Feed memory);\\n\\n    function getAllFeeds() external view returns (Feed[] memory);\\n\\n    function latestTimestamp() external view returns (uint256);\\n}\\n\",\"keccak256\":\"0x7e62644f8640836f5190a6a61eae54540dea4ae8490f9f17ccd7b2470c428361\",\"license\":\"MIT\"},\"contracts/implementation/ChainlinkOracleWrapper.sol\":{\"content\":\"// SPDX-License-Identifier: UNLICENSED\\npragma solidity ^0.8.9;\\n\\nimport \\\"../interfaces/IOracleWrapper.sol\\\";\\nimport \\\"@switchboard-xyz/evm.js/contracts/Aggregator.sol\\\";\\n\\n\\ncontract ChainlinkOracleWrapper is IOracleWrapper, AggregatorV3Interface {\\n    // errors\\n\\n    function stringToBytes32(string memory source) public pure returns (bytes32 result) {\\n        // Ensure the string is not longer than 32 bytes\\n        require(bytes(source).length <= 32, \\\"Source string too long\\\");\\n        // Cast the string to bytes32 and return\\n        assembly {\\n            result := mload(add(source, 32))\\n        }\\n    }\\n    error RoundEmpty(bytes32 feedName, uint80 roundId);\\n\\n    address public switchboardPricesContract;\\n    address public feedId;\\n    bytes32 public feedName;\\n    string public name;\\n    string public description;\\n    address private _deployer;\\n    Aggregator public aggregrator;\\n    constructor(\\n        address _switchboard, // Switchboard contract address\\n        address _feedId,\\n        string memory _feedName, // Function id corresponding to the feed\\n        string memory _name, // Name of the feed\\n        string memory _description\\n    ) {\\n        switchboardPricesContract = _switchboard;\\n        feedId = _feedId;\\n        feedName = stringToBytes32(_feedName);\\n        name = _name;\\n        description = _description;\\n        _deployer = msg.sender;\\n        aggregrator = new Aggregator(\\n            _switchboard,\\n            _feedId,\\n            stringToBytes32(_feedName),\\n            _name,\\n            _description\\n        );\\n    }\\n\\n    function decimals() external pure override(IOracleWrapper, AggregatorV3Interface) returns (uint8) {\\n        return 18;\\n    }\\n\\n    function version() external pure override returns (uint256) {\\n        return 1;\\n    }\\n\\n    function viewLatestRoundData() external view returns (uint80, int256, uint256, uint256, uint80) {\\n        return aggregrator.viewLatestRoundData();\\n    }\\n\\n    function viewRoundData(uint80 _roundId) external view returns (uint80, int256, uint256, uint256, uint80) {\\n        return aggregrator.viewRoundData(_roundId);\\n    }\\nfunction getPrice() external view override returns (int256) {\\n    (, int256 price, , , ) = aggregrator.viewLatestRoundData();\\n    return price;\\n}\\n\\nfunction getPriceAndMetadata() external view override returns (int256 _price, bytes memory _data) {\\n    (, _price, , , ) = aggregrator.viewLatestRoundData();\\n    return (_price, _data);\\n\\n}\\n\\nfunction latestRoundData() external view override returns (uint80, int256, uint256, uint256, uint80) {\\n    return aggregrator.viewLatestRoundData();\\n\\n}\\nfunction getRoundData(uint80 _roundId) external view override returns (uint80, int256, uint256, uint256, uint80) {\\n    return aggregrator.viewRoundData(_roundId);\\n\\n}\\n\\n\\nfunction fromWad(int256 wad) external view override returns (int256) {\\n    return wad / 10**18;\\n\\n}\\n\\nfunction poll() external override returns (int256) {\\n    (, int256 price, , , ) = aggregrator.viewLatestRoundData();\\n    return price;\\n\\n}\\n\\nfunction oracle() external view override returns (address) {\\n    return address(aggregrator);\\n\\n}\\n\\nfunction deployer() external view override returns (address) {\\n    return _deployer;\\n\\n}\\n\\n\\n\\n}\",\"keccak256\":\"0x7af49f7e07276387ef4e5ce5dc3a8b3ad610b5b448c7d75ac5e70f871c537348\",\"license\":\"UNLICENSED\"},\"contracts/interfaces/IOracleWrapper.sol\":{\"content\":\"//SPDX-License-Identifier: CC-BY-NC-ND-4.0\\npragma solidity 0.8.9;\\n\\n/// @title The oracle wrapper contract interface\\ninterface IOracleWrapper {\\n    function oracle() external view returns (address);\\n\\n    function decimals() external view returns (uint8);\\n\\n    function deployer() external view returns (address);\\n\\n    // #### Functions\\n\\n    /**\\n     * @notice Returns the current price for the asset in question\\n     * @return The latest price\\n     */\\n    function getPrice() external view returns (int256);\\n\\n    /**\\n     * @return _price The latest round data price\\n     * @return _data The metadata. Implementations can choose what data to return here\\n     */\\n    function getPriceAndMetadata() external view returns (int256 _price, bytes memory _data);\\n\\n    /**\\n     * @notice Converts from a WAD to normal value\\n     * @return Converted non-WAD value\\n     */\\n    function fromWad(int256 wad) external view returns (int256);\\n\\n    /**\\n     * @notice Updates the underlying oracle state and returns the new price\\n     * @dev Spot oracles must implement but it will be a no-op\\n     */\\n    function poll() external returns (int256);\\n}\\n\",\"keccak256\":\"0x33c55def28bddae3104b69d32cb0b13dad2ef95f59268fa8ec29575c965a5d43\",\"license\":\"CC-BY-NC-ND-4.0\"}},\"version\":1}",
+  "bytecode": "0x60806040523480156200001157600080fd5b506040516200189a3803806200189a833981016040819052620000349162000333565b600080546001600160a01b038088166001600160a01b03199283161790925560018054928716929091169190911790556200006f8362000127565b60025581516200008790600390602085019062000188565b5080516200009d90600490602084019062000188565b50600580546001600160a01b031916331790558484620000bd8562000127565b8484604051620000cd9062000217565b620000dd95949392919062000419565b604051809103906000f080158015620000fa573d6000803e3d6000fd5b50600680546001600160a01b0319166001600160a01b039290921691909117905550620004ab9350505050565b6000602082511115620001805760405162461bcd60e51b815260206004820152601660248201527f536f7572636520737472696e6720746f6f206c6f6e6700000000000000000000604482015260640160405180910390fd5b506020015190565b82805462000196906200046e565b90600052602060002090601f016020900481019282620001ba576000855562000205565b82601f10620001d557805160ff191683800117855562000205565b8280016001018555821562000205579182015b8281111562000205578251825591602001919060010190620001e8565b506200021392915062000225565b5090565b610b328062000d6883390190565b5b8082111562000213576000815560010162000226565b80516001600160a01b03811681146200025457600080fd5b919050565b634e487b7160e01b600052604160045260246000fd5b60005b838110156200028c57818101518382015260200162000272565b838111156200029c576000848401525b50505050565b600082601f830112620002b457600080fd5b81516001600160401b0380821115620002d157620002d162000259565b604051601f8301601f19908116603f01168101908282118183101715620002fc57620002fc62000259565b816040528381528660208588010111156200031657600080fd5b620003298460208301602089016200026f565b9695505050505050565b600080600080600060a086880312156200034c57600080fd5b62000357866200023c565b945062000367602087016200023c565b60408701519094506001600160401b03808211156200038557600080fd5b6200039389838a01620002a2565b94506060880151915080821115620003aa57600080fd5b620003b889838a01620002a2565b93506080880151915080821115620003cf57600080fd5b50620003de88828901620002a2565b9150509295509295909350565b60008151808452620004058160208601602086016200026f565b601f01601f19169290920160200192915050565b6001600160a01b038681168252851660208201526040810184905260a0606082018190526000906200044e90830185620003eb565b8281036080840152620004628185620003eb565b98975050505050505050565b600181811c908216806200048357607f821691505b60208210811415620004a557634e487b7160e01b600052602260045260246000fd5b50919050565b6108ad80620004bb6000396000f3fe608060405234801561001057600080fd5b50600436106101215760003560e01c80635f9970e6116100ad578063a117527911610071578063a117527914610240578063cfb5192814610248578063d5f394881461025b578063db6d8fcf1461026c578063feaf968c1461016a57600080fd5b80635f9970e6146102145780637284e416146102275780637dc0d1d01461022f57806398d5fdca146102405780639a6fc8f51461020157600080fd5b80633f3178e8116100f45780633f3178e8146101a9578063412ad1cc146101d45780634a643499146101e757806354fd4d50146101fa5780635c47d0071461020157600080fd5b806306fdde0314610126578063313ce5671461014457806335e8568f146101535780633c528def1461016a575b600080fd5b61012e610282565b60405161013b9190610647565b60405180910390f35b6040516012815260200161013b565b61015c60025481565b60405190815260200161013b565b610172610310565b6040805169ffffffffffffffffffff968716815260208101959095528401929092526060830152909116608082015260a00161013b565b6006546101bc906001600160a01b031681565b6040516001600160a01b03909116815260200161013b565b61015c6101e2366004610661565b6103af565b6001546101bc906001600160a01b031681565b600161015c565b61017261020f366004610695565b6103c9565b6000546101bc906001600160a01b031681565b61012e61046b565b6006546001600160a01b03166101bc565b61015c610478565b61015c6102563660046106c8565b61050c565b6005546001600160a01b03166101bc565b610274610565565b60405161013b929190610779565b6003805461028f9061079a565b80601f01602080910402602001604051908101604052809291908181526020018280546102bb9061079a565b80156103085780601f106102dd57610100808354040283529160200191610308565b820191906000526020600020905b8154815290600101906020018083116102eb57829003601f168201915b505050505081565b6000806000806000600660009054906101000a90046001600160a01b03166001600160a01b0316633c528def6040518163ffffffff1660e01b815260040160a06040518083038186803b15801561036657600080fd5b505afa15801561037a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061039e91906107d5565b945094509450945094509091929394565b60006103c3670de0b6b3a76400008361082d565b92915050565b600654604051635c47d00760e01b815269ffffffffffffffffffff8316600482015260009182918291829182916001600160a01b031690635c47d0079060240160a06040518083038186803b15801561042157600080fd5b505afa158015610435573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061045991906107d5565b939a9299509097509550909350915050565b6004805461028f9061079a565b600080600660009054906101000a90046001600160a01b03166001600160a01b0316633c528def6040518163ffffffff1660e01b815260040160a06040518083038186803b1580156104c957600080fd5b505afa1580156104dd573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061050191906107d5565b509195945050505050565b600060208251111561055d5760405162461bcd60e51b8152602060048201526016602482015275536f7572636520737472696e6720746f6f206c6f6e6760501b604482015260640160405180910390fd5b506020015190565b60006060600660009054906101000a90046001600160a01b03166001600160a01b0316633c528def6040518163ffffffff1660e01b815260040160a06040518083038186803b1580156105b757600080fd5b505afa1580156105cb573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105ef91906107d5565b509195939450505050565b6000815180845260005b8181101561062057602081850181015186830182015201610604565b81811115610632576000602083870101525b50601f01601f19169290920160200192915050565b60208152600061065a60208301846105fa565b9392505050565b60006020828403121561067357600080fd5b5035919050565b69ffffffffffffffffffff8116811461069257600080fd5b50565b6000602082840312156106a757600080fd5b813561065a8161067a565b634e487b7160e01b600052604160045260246000fd5b6000602082840312156106da57600080fd5b813567ffffffffffffffff808211156106f257600080fd5b818401915084601f83011261070657600080fd5b813581811115610718576107186106b2565b604051601f8201601f19908116603f01168101908382118183101715610740576107406106b2565b8160405282815287602084870101111561075957600080fd5b826020860160208301376000928101602001929092525095945050505050565b82815260406020820152600061079260408301846105fa565b949350505050565b600181811c908216806107ae57607f821691505b602082108114156107cf57634e487b7160e01b600052602260045260246000fd5b50919050565b600080600080600060a086880312156107ed57600080fd5b85516107f88161067a565b80955050602086015193506040860151925060608601519150608086015161081f8161067a565b809150509295509295909350565b60008261084a57634e487b7160e01b600052601260045260246000fd5b600160ff1b82146000198414161561087257634e487b7160e01b600052601160045260246000fd5b50059056fea26469706673582212209a7f6ea13ea875518a1cf55e8077d4c4d64ff6ccdddaa7895d47f594f752fd7964736f6c6343000809003360806040523480156200001157600080fd5b5060405162000b3238038062000b32833981016040819052620000349162000230565b600080546001600160a01b038088166001600160a01b0319928316179092556001805492871692909116919091179055600283905581516200007e906003906020850190620000a0565b50805162000094906004906020840190620000a0565b50505050505062000307565b828054620000ae90620002ca565b90600052602060002090601f016020900481019282620000d257600085556200011d565b82601f10620000ed57805160ff19168380011785556200011d565b828001600101855582156200011d579182015b828111156200011d57825182559160200191906001019062000100565b506200012b9291506200012f565b5090565b5b808211156200012b576000815560010162000130565b80516001600160a01b03811681146200015e57600080fd5b919050565b634e487b7160e01b600052604160045260246000fd5b600082601f8301126200018b57600080fd5b81516001600160401b0380821115620001a857620001a862000163565b604051601f8301601f19908116603f01168101908282118183101715620001d357620001d362000163565b81604052838152602092508683858801011115620001f057600080fd5b600091505b83821015620002145785820183015181830184015290820190620001f5565b83821115620002265760008385830101525b9695505050505050565b600080600080600060a086880312156200024957600080fd5b620002548662000146565b9450620002646020870162000146565b6040870151606088015191955093506001600160401b03808211156200028957600080fd5b6200029789838a0162000179565b93506080880151915080821115620002ae57600080fd5b50620002bd8882890162000179565b9150509295509295909350565b600181811c90821680620002df57607f821691505b602082108114156200030157634e487b7160e01b600052602260045260246000fd5b50919050565b61081b80620003176000396000f3fe608060405234801561001057600080fd5b50600436106100a95760003560e01c806354fd4d501161007157806354fd4d50146101595780635c47d007146101605780635f9970e6146101735780637284e416146101865780639a6fc8f51461018e578063feaf968c146101a157600080fd5b806306fdde03146100ae578063313ce567146100cc57806335e8568f146100db5780633c528def146100f25780634a6434991461012e575b600080fd5b6100b66101a9565b6040516100c391906105bd565b60405180910390f35b604051601281526020016100c3565b6100e460025481565b6040519081526020016100c3565b6100fa610237565b604080516001600160501b03968716815260208101959095528401929092526060830152909116608082015260a0016100c3565b600154610141906001600160a01b031681565b6040516001600160a01b0390911681526020016100c3565b60016100e4565b6100fa61016e36600461062a565b6102e4565b600054610141906001600160a01b031681565b6100b661046f565b6100fa61019c36600461062a565b61047c565b6100fa6104db565b600380546101b69061064e565b80601f01602080910402602001604051908101604052809291908181526020018280546101e29061064e565b801561022f5780601f106102045761010080835404028352916020019161022f565b820191906000526020600020905b81548152906001019060200180831161021257829003601f168201915b505050505081565b6000805460025460405163e90f1a4360e01b81526004810191909152829182918291829182916001600160a01b03169063e90f1a43906024016101006040518083038186803b15801561028957600080fd5b505afa15801561029d573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906102c19190610713565b606001518051602082015160409092015197989097919650909450879350915050565b6000805460025460405163e90f1a4360e01b81526004810191909152829182918291829182916001600160a01b03169063e90f1a43906024016101006040518083038186803b15801561033657600080fd5b505afa15801561034a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061036e9190610713565b905061039460405180606001604052806000815260200160008152602001600081525090565b81604001516001600160501b0316886001600160501b031614156103bd5750606081015161044f565b600054600254604051635823156d60e01b815260048101919091526001600160501b038a1660248201526001600160a01b0390911690635823156d9060440160606040518083038186803b15801561041457600080fd5b505afa158015610428573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061044c91906107c9565b90505b805160208201516040909201519899909891975090955088945092505050565b600480546101b69061064e565b600080600080600061048d866102e4565b939850919650945092509050816104d2576002546040516304e51fed60e21b815260048101919091526001600160501b03861660248201526044015b60405180910390fd5b91939590929450565b6000805460025460405163e90f1a4360e01b815283928392839283926001600160a01b03169163e90f1a4391610518919060040190815260200190565b6101006040518083038186803b15801561053157600080fd5b505afa158015610545573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105699190610713565b6040015194506001600160501b0385166105a4576002546040516304e51fed60e21b81526004810191909152600060248201526044016104c9565b6105ac610237565b945094509450945094509091929394565b600060208083528351808285015260005b818110156105ea578581018301518582016040015282016105ce565b818111156105fc576000604083870101525b50601f01601f1916929092016040019392505050565b6001600160501b038116811461062757600080fd5b50565b60006020828403121561063c57600080fd5b813561064781610612565b9392505050565b600181811c9082168061066257607f821691505b6020821081141561068357634e487b7160e01b600052602260045260246000fd5b50919050565b805161069481610612565b919050565b6000606082840312156106ab57600080fd5b6040516060810181811067ffffffffffffffff821117156106dc57634e487b7160e01b600052604160045260246000fd5b80604052508091508251815260208301516020820152604083015160408201525092915050565b8051801515811461069457600080fd5b6000610100828403121561072657600080fd5b60405160c0810181811067ffffffffffffffff8211171561075757634e487b7160e01b600052604160045260246000fd5b60405282516001600160a01b038116811461077157600080fd5b81526020838101519082015261078960408401610689565b604082015261079b8460608501610699565b60608201526107ac60c08401610703565b60808201526107bd60e08401610703565b60a08201529392505050565b6000606082840312156107db57600080fd5b610647838361069956fea264697066735822122083a45ce4195c934e50b561a106c74279a72561d625397a581d5b8b5b5642641664736f6c63430008090033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106101215760003560e01c80635f9970e6116100ad578063a117527911610071578063a117527914610240578063cfb5192814610248578063d5f394881461025b578063db6d8fcf1461026c578063feaf968c1461016a57600080fd5b80635f9970e6146102145780637284e416146102275780637dc0d1d01461022f57806398d5fdca146102405780639a6fc8f51461020157600080fd5b80633f3178e8116100f45780633f3178e8146101a9578063412ad1cc146101d45780634a643499146101e757806354fd4d50146101fa5780635c47d0071461020157600080fd5b806306fdde0314610126578063313ce5671461014457806335e8568f146101535780633c528def1461016a575b600080fd5b61012e610282565b60405161013b9190610647565b60405180910390f35b6040516012815260200161013b565b61015c60025481565b60405190815260200161013b565b610172610310565b6040805169ffffffffffffffffffff968716815260208101959095528401929092526060830152909116608082015260a00161013b565b6006546101bc906001600160a01b031681565b6040516001600160a01b03909116815260200161013b565b61015c6101e2366004610661565b6103af565b6001546101bc906001600160a01b031681565b600161015c565b61017261020f366004610695565b6103c9565b6000546101bc906001600160a01b031681565b61012e61046b565b6006546001600160a01b03166101bc565b61015c610478565b61015c6102563660046106c8565b61050c565b6005546001600160a01b03166101bc565b610274610565565b60405161013b929190610779565b6003805461028f9061079a565b80601f01602080910402602001604051908101604052809291908181526020018280546102bb9061079a565b80156103085780601f106102dd57610100808354040283529160200191610308565b820191906000526020600020905b8154815290600101906020018083116102eb57829003601f168201915b505050505081565b6000806000806000600660009054906101000a90046001600160a01b03166001600160a01b0316633c528def6040518163ffffffff1660e01b815260040160a06040518083038186803b15801561036657600080fd5b505afa15801561037a573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061039e91906107d5565b945094509450945094509091929394565b60006103c3670de0b6b3a76400008361082d565b92915050565b600654604051635c47d00760e01b815269ffffffffffffffffffff8316600482015260009182918291829182916001600160a01b031690635c47d0079060240160a06040518083038186803b15801561042157600080fd5b505afa158015610435573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061045991906107d5565b939a9299509097509550909350915050565b6004805461028f9061079a565b600080600660009054906101000a90046001600160a01b03166001600160a01b0316633c528def6040518163ffffffff1660e01b815260040160a06040518083038186803b1580156104c957600080fd5b505afa1580156104dd573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061050191906107d5565b509195945050505050565b600060208251111561055d5760405162461bcd60e51b8152602060048201526016602482015275536f7572636520737472696e6720746f6f206c6f6e6760501b604482015260640160405180910390fd5b506020015190565b60006060600660009054906101000a90046001600160a01b03166001600160a01b0316633c528def6040518163ffffffff1660e01b815260040160a06040518083038186803b1580156105b757600080fd5b505afa1580156105cb573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906105ef91906107d5565b509195939450505050565b6000815180845260005b8181101561062057602081850181015186830182015201610604565b81811115610632576000602083870101525b50601f01601f19169290920160200192915050565b60208152600061065a60208301846105fa565b9392505050565b60006020828403121561067357600080fd5b5035919050565b69ffffffffffffffffffff8116811461069257600080fd5b50565b6000602082840312156106a757600080fd5b813561065a8161067a565b634e487b7160e01b600052604160045260246000fd5b6000602082840312156106da57600080fd5b813567ffffffffffffffff808211156106f257600080fd5b818401915084601f83011261070657600080fd5b813581811115610718576107186106b2565b604051601f8201601f19908116603f01168101908382118183101715610740576107406106b2565b8160405282815287602084870101111561075957600080fd5b826020860160208301376000928101602001929092525095945050505050565b82815260406020820152600061079260408301846105fa565b949350505050565b600181811c908216806107ae57607f821691505b602082108114156107cf57634e487b7160e01b600052602260045260246000fd5b50919050565b600080600080600060a086880312156107ed57600080fd5b85516107f88161067a565b80955050602086015193506040860151925060608601519150608086015161081f8161067a565b809150509295509295909350565b60008261084a57634e487b7160e01b600052601260045260246000fd5b600160ff1b82146000198414161561087257634e487b7160e01b600052601160045260246000fd5b50059056fea26469706673582212209a7f6ea13ea875518a1cf55e8077d4c4d64ff6ccdddaa7895d47f594f752fd7964736f6c63430008090033",
+  "devdoc": {
+    "kind": "dev",
+    "methods": {
+      "fromWad(int256)": {
+        "returns": {
+          "_0": "Converted non-WAD value"
+        }
+      },
+      "getPrice()": {
+        "returns": {
+          "_0": "The latest price"
+        }
+      },
+      "getPriceAndMetadata()": {
+        "returns": {
+          "_data": "The metadata. Implementations can choose what data to return here",
+          "_price": "The latest round data price"
+        }
+      },
+      "poll()": {
+        "details": "Spot oracles must implement but it will be a no-op"
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {
+      "fromWad(int256)": {
+        "notice": "Converts from a WAD to normal value"
+      },
+      "getPrice()": {
+        "notice": "Returns the current price for the asset in question"
+      },
+      "poll()": {
+        "notice": "Updates the underlying oracle state and returns the new price"
+      }
+    },
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 465,
+        "contract": "contracts/implementation/ChainlinkOracleWrapper.sol:ChainlinkOracleWrapper",
+        "label": "switchboardPricesContract",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 467,
+        "contract": "contracts/implementation/ChainlinkOracleWrapper.sol:ChainlinkOracleWrapper",
+        "label": "feedId",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 469,
+        "contract": "contracts/implementation/ChainlinkOracleWrapper.sol:ChainlinkOracleWrapper",
+        "label": "feedName",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_bytes32"
+      },
+      {
+        "astId": 471,
+        "contract": "contracts/implementation/ChainlinkOracleWrapper.sol:ChainlinkOracleWrapper",
+        "label": "name",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_string_storage"
+      },
+      {
+        "astId": 473,
+        "contract": "contracts/implementation/ChainlinkOracleWrapper.sol:ChainlinkOracleWrapper",
+        "label": "description",
+        "offset": 0,
+        "slot": "4",
+        "type": "t_string_storage"
+      },
+      {
+        "astId": 475,
+        "contract": "contracts/implementation/ChainlinkOracleWrapper.sol:ChainlinkOracleWrapper",
+        "label": "_deployer",
+        "offset": 0,
+        "slot": "5",
+        "type": "t_address"
+      },
+      {
+        "astId": 478,
+        "contract": "contracts/implementation/ChainlinkOracleWrapper.sol:ChainlinkOracleWrapper",
+        "label": "aggregrator",
+        "offset": 0,
+        "slot": "6",
+        "type": "t_contract(Aggregator)323"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_bytes32": {
+        "encoding": "inplace",
+        "label": "bytes32",
+        "numberOfBytes": "32"
+      },
+      "t_contract(Aggregator)323": {
+        "encoding": "inplace",
+        "label": "contract Aggregator",
+        "numberOfBytes": "20"
+      },
+      "t_string_storage": {
+        "encoding": "bytes",
+        "label": "string",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

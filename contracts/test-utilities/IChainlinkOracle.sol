@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.7;
+pragma solidity 0.8.9;
 
 /**
  * This interface follows the AggregatorV3 interface. The getRoundData has been excluded as only the

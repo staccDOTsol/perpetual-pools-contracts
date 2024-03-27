@@ -1,86 +1,109 @@
-//SPDX-License-Identifier: CC-BY-NC-ND-4.0
-pragma solidity 0.8.7;
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.9;
 
 import "../interfaces/IOracleWrapper.sol";
-import "@chainlink/contracts/src/v0.8/interfaces/AggregatorV2V3Interface.sol";
+import "@switchboard-xyz/evm.js/contracts/Aggregator.sol";
 
-/// @title The oracle management contract for chainlink V3 oracles
-contract ChainlinkOracleWrapper is IOracleWrapper {
-    // #### Globals
-    /**
-     * @notice The address of the feed oracle
-     */
-    address public override oracle;
-    address public immutable override deployer;
-    uint8 private constant MAX_DECIMALS = 18;
-    int256 public scaler;
 
-    // #### Functions
-    constructor(address _oracle, address _deployer) {
-        require(_oracle != address(0), "Oracle cannot be null");
-        require(_deployer != address(0), "Deployer cannot be null");
-        oracle = _oracle;
-        deployer = _deployer;
-        // reset the scaler for consistency
-        uint8 _decimals = AggregatorV2V3Interface(oracle).decimals();
-        require(_decimals <= MAX_DECIMALS, "COA: too many decimals");
-        // scaler is always <= 10^18 and >= 1 so this cast is safe
-        unchecked {
-            scaler = int256(10**(MAX_DECIMALS - _decimals));
+contract ChainlinkOracleWrapper is IOracleWrapper, AggregatorV3Interface {
+    // errors
+
+    function stringToBytes32(string memory source) public pure returns (bytes32 result) {
+        // Ensure the string is not longer than 32 bytes
+        require(bytes(source).length <= 32, "Source string too long");
+        // Cast the string to bytes32 and return
+        assembly {
+            result := mload(add(source, 32))
         }
     }
+    error RoundEmpty(bytes32 feedName, uint80 roundId);
 
-    function decimals() external pure override returns (uint8) {
-        return MAX_DECIMALS;
+    address public switchboardPricesContract;
+    address public feedId;
+    bytes32 public feedName;
+    string public name;
+    string public description;
+    address private _deployer;
+    Aggregator public aggregrator;
+    constructor(
+        address _switchboard, // Switchboard contract address
+        address _feedId,
+        string memory _feedName, // Function id corresponding to the feed
+        string memory _name, // Name of the feed
+        string memory _description
+    ) {
+        switchboardPricesContract = _switchboard;
+        feedId = _feedId;
+        feedName = stringToBytes32(_feedName);
+        name = _name;
+        description = _description;
+        _deployer = msg.sender;
+        aggregrator = new Aggregator(
+            _switchboard,
+            _feedId,
+            stringToBytes32(_feedName),
+            _name,
+            _description
+        );
     }
 
-    /**
-     * @notice Returns the oracle price in WAD format
-     */
-    function getPrice() external view override returns (int256) {
-        (int256 _price, ) = _latestRoundData();
-        return _price;
+    function decimals() external pure override(IOracleWrapper, AggregatorV3Interface) returns (uint8) {
+        return 18;
     }
 
-    /**
-     * @return _price The latest round data price
-     * @return _data The metadata. Implementations can choose what data to return here. This implementation returns the roundID
-     */
-    function getPriceAndMetadata() external view override returns (int256, bytes memory) {
-        (int256 price, uint80 roundID) = _latestRoundData();
-        bytes memory _data = abi.encodePacked(roundID);
-        return (price, _data);
+    function version() external pure override returns (uint256) {
+        return 1;
     }
 
-    /**
-     * @dev An internal function that gets the WAD value price and latest roundID
-     */
-    function _latestRoundData() internal view returns (int256, uint80) {
-        (uint80 roundID, int256 price, , uint256 timeStamp, uint80 answeredInRound) = AggregatorV2V3Interface(oracle)
-            .latestRoundData();
-        require(answeredInRound >= roundID, "COA: Stale answer");
-        require(timeStamp != 0, "COA: Round incomplete");
-        return (toWad(price), roundID);
+    function viewLatestRoundData() external view returns (uint80, int256, uint256, uint256, uint80) {
+        return aggregrator.viewLatestRoundData();
     }
 
-    /**
-     * @notice Converts a raw value to a WAD value based on the decimals in the feed
-     * @dev This allows consistency for oracles used throughout the protocol
-     *      and allows oracles to have their decimals changed without affecting
-     *      the market itself
-     */
-    function toWad(int256 raw) internal view returns (int256) {
-        return raw * scaler;
+    function viewRoundData(uint80 _roundId) external view returns (uint80, int256, uint256, uint256, uint80) {
+        return aggregrator.viewRoundData(_roundId);
     }
+function getPrice() external view override returns (int256) {
+    (, int256 price, , , ) = aggregrator.viewLatestRoundData();
+    return price;
+}
 
-    /**
-     * @notice Converts from a WAD value to a raw value based on the decimals in the feed
-     */
-    function fromWad(int256 wad) external view override returns (int256) {
-        return wad / scaler;
-    }
+function getPriceAndMetadata() external view override returns (int256 _price, bytes memory _data) {
+    (, _price, , , ) = aggregrator.viewLatestRoundData();
+    return (_price, _data);
 
-    function poll() external pure override returns (int256) {
-        return 0;
-    }
+}
+
+function latestRoundData() external view override returns (uint80, int256, uint256, uint256, uint80) {
+    return aggregrator.viewLatestRoundData();
+
+}
+function getRoundData(uint80 _roundId) external view override returns (uint80, int256, uint256, uint256, uint80) {
+    return aggregrator.viewRoundData(_roundId);
+
+}
+
+
+function fromWad(int256 wad) external view override returns (int256) {
+    return wad / 10**18;
+
+}
+
+function poll() external override returns (int256) {
+    (, int256 price, , , ) = aggregrator.viewLatestRoundData();
+    return price;
+
+}
+
+function oracle() external view override returns (address) {
+    return address(aggregrator);
+
+}
+
+function deployer() external view override returns (address) {
+    return _deployer;
+
+}
+
+
+
 }

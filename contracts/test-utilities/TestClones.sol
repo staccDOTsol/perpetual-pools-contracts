@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 // OpenZeppelin Contracts v4.3.2 (proxy/Clones.sol)
-pragma solidity 0.8.7;
+pragma solidity 0.8.9;
 
 /**
  * @dev https://eips.ethereum.org/EIPS/eip-1167[EIP 1167] is a standard for

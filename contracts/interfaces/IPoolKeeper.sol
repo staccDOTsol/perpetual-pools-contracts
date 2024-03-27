@@ -1,5 +1,5 @@
 //SPDX-License-Identifier: CC-BY-NC-ND-4.0
-pragma solidity 0.8.7;
+pragma solidity 0.8.9;
 
 /// @title The manager contract interface for multiple markets and the pools in them
 interface IPoolKeeper {
